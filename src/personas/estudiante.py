@@ -1,4 +1,4 @@
-from personas.persona import Persona
+from .persona import Persona
 
 
 class Estudiante(Persona):  # subclase
