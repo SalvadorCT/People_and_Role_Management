@@ -1,6 +1,6 @@
 from src.personas.estudiante import Estudiante
 
-
+# test basico
 def test_estudiante():
     estudiante = Estudiante('12345678',
                             'Juan',
