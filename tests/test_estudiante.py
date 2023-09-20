@@ -16,3 +16,4 @@ def test_estudiante():
                                     f'\n🆔 Identificacion: 12345678'
                                     f'\n👤 Nombre: Juan Perez'
                                     f'\n📚 Semestre de Matricula: 2')
+    assert estudiante.adicional_info() is None

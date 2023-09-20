@@ -1,4 +1,4 @@
-class Persona():  # superclase
+class Persona:  # superclase
     def __init__(self, id, nombre, apellido):
         self._id = id
         self._nombre = nombre

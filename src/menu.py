@@ -1,77 +1,121 @@
-# from main import *
+from personas.persona import Persona
+from personas.cliente import Cliente
+from personas.estudiante import Estudiante
+from personas.empleado import Empleado
+from src.assets.generar_cvs import *
+
+
+def menu_pricinpal():
+    print('''1. Crear Persona
+2. Crear Estudiante
+3. Crear Cliente
+4. Crear Empleado
+5. Mostrar informacion
+6. Generar CSV
+7. Leer CSV
+8. Salir
+    ''')
+    opcion = input('Ingrese una opcion: ')
+    return opcion
+
+
+# def menu_persona():
+#     print('''
+#     1. Crear Persona
+#     2. Generar CSV
+#     3. Salir
+#     ''')
+#     opcion = input('Ingrese una opcion: ')
+#     return opcion
 #
-# def menu():
-#     print("1. Add a new student")
-#     print("2. Delete a student")
-#     print("3. Update a student")
-#     print("4. Search a student")
-#     print("5. Display all students")
-#     print("6. Exit")
-#     print("Enter your choice: ", end="")
-#     choice = int(input())
-#     return choice
 #
-# def add_student():
-#     print("Enter student's id: ", end="")
-#     id = int(input())
-#     print("Enter student's first name: ", end="")
-#     first_name = input()
-#     print("Enter student's last name: ", end="")
-#     last_name = input()
-#     print("Enter student's grade: ", end="")
-#     grade = int(input())
-#     obj = Estudiante(id, first_name, last_name, grade)
-#     obj.save()
-#     print("Student added successfully")
+# def menu_estudiante():
+#     print('''
+#     1. Crear Estudiante
+#     2. Generar CSV
+#     3. Salir
+#     ''')
+#     opcion = input('Ingrese una opcion: ')
+#     return opcion
 #
-# def delete_student():
-#     print("Enter student's id: ", end="")
-#     id = int(input())
-#     obj = Estudiante.get(id)
-#     obj.delete()
-#     print("Student deleted successfully")
 #
-# def update_student():
-#     print("Enter student's id: ", end="")
-#     id = int(input())
-#     obj = Estudiante.get(id)
-#     print("Enter student's first name: ", end="")
-#     first_name = input()
-#     print("Enter student's last name: ", end="")
-#     last_name = input()
-#     print("Enter student's grade: ", end="")
-#     grade = int(input())
-#     obj.first_name = first_name
-#     obj.last_name = last_name
-#     obj.grade = grade
-#     obj.save()
-#     print("Student updated successfully")
+# def menu_cliente():
+#     print('''
+#     1. Crear Cliente
+#     2. Generar CSV
+#     3. Salir
+#     ''')
+#     opcion = input('Ingrese una opcion: ')
+#     return opcion
 #
-# def search_student():
-#     print("Enter student's id: ", end="")
-#     id = int(input())
-#     obj = Estudiante.get(id)
-#     print(obj)
 #
-# def display_all_students():
-#     for obj in Estudiante.all():
-#         print(obj)
-#
-# while True:
-#     choice = menu()
-#     if choice == 1:
-#         add_student()
-#     elif choice == 2:
-#         delete_student()
-#     elif choice == 3:
-#         update_student()
-#     elif choice == 4:
-#         search_student()
-#     elif choice == 5:
-#         display_all_students()
-#     elif choice == 6:
-#         break
-#     else:
-#         print("Invalid choice")
-#     input("Press enter to continue...")
-#
+# def menu_empleado():
+#     print('''
+#     1. Crear Empleado
+#     2. Generar CSV
+#     3. Salir
+#     ''')
+#     opcion = input('Ingrese una opcion: ')
+#     return opcion
+
+
+def crear_persona():
+    id = input('Ingrese el ID: ')
+    nombre = input('Ingrese el Nombre: ')
+    apellido = input('Ingrese el Apellido: ')
+    persona = Persona(id, nombre, apellido)
+    return persona
+
+
+def crear_estudiante():
+    id = input('Ingrese el ID: ')
+    nombre = input('Ingrese el Nombre: ')
+    apellido = input('Ingrese el Apellido: ')
+    semestre = int(input('Ingrese el Semestre de Matricula: '))
+    estudiante = Estudiante(id, nombre, apellido, semestre)
+    return estudiante
+
+
+def crear_cliente():
+    id = input('Ingrese el ID: ')
+    nombre = input('Ingrese el Nombre: ')
+    apellido = input('Ingrese el Apellido: ')
+    direccion = input('Ingrese la Direccion Fiscal: ')
+    codigo = input('Ingrese el Codigo Postal: ')
+    estado = input('Ingrese el Estado: ')
+    cliente = Cliente(id, nombre, apellido, direccion, codigo, estado)
+    return cliente
+
+
+def crear_empleado():
+    id = input('Ingrese el ID: ')
+    nombre = input('Ingrese el Nombre: ')
+    apellido = input('Ingrese el Apellido: ')
+    fecha = input('Ingrese la Fecha de Ingreso: ')
+    cargo = input('Ingrese el Cargo: ')
+    sueldo = int(input('Ingrese el Sueldo: '))
+    empleado = Empleado(id, nombre, apellido, fecha, cargo, sueldo)
+    return empleado
+
+
+def crear_cvs(personas, estudiantes, clientes, empleados):
+    persona_a_csv(personas)
+    estudiante_a_csv(estudiantes)
+    cliente_a_csv(clientes)
+    empleado_a_csv(empleados)
+
+
+def imprimir_csv():
+    leer_csv("personas")
+    leer_csv("estudiantes")
+    leer_csv("clientes")
+    leer_csv("empleados")
+
+
+def imprimir(objetos, nombre):
+    if not objetos:
+        print(f'No hay informacion de {nombre}')
+        return None
+    for objeto in objetos:
+        print(objeto)
+        objeto.adicional_info()

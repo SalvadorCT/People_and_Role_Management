@@ -1,21 +1,52 @@
-from personas.persona import Persona
-from personas.cliente import Cliente
-from personas.estudiante import Estudiante
-from personas.empleado import Empleado
+from menu import *
 
-obj1 = Persona(12345678, 'Finn', 'Mertens')
 
-obj2 = Estudiante(24681012, 'Dwayne', 'Johnson', 5)
+def main():
+    personas = []
+    estudiantes = []
+    clientes = []
+    empleados = []
+    while True:
+        opcion = menu_pricinpal()
+        if opcion == '1':
+            persona = crear_persona()
+            personas.append(persona)
+            print("Persona creada con exito")
 
-obj3 = Cliente(4043243, 'Homero', 'J. Simpson', 'Avenida Siempre Viva 742', 49007, 'Springfield')
+        elif opcion == '2':
+            estudiante = crear_estudiante()
+            estudiantes.append(estudiante)
+            print("Estudiante creado con exito")
 
-obj4 = Empleado(2000569, 'Larry', 'Needlemeyer', 2005, 'supervisor')
+        elif opcion == '3':
+            cliente = crear_cliente()
+            clientes.append(cliente)
+            print("Cliente creado con exito")
 
-def imprimir(objeto):
-    print(objeto)
-    objeto.adicional_info()
+        elif opcion == '4':
+            empleado = crear_empleado()
+            empleados.append(empleado)
+            print("Empleado creado con exito")
 
-imprimir(obj1)
-imprimir(obj2)
-imprimir(obj3)
-imprimir(obj4)
+        elif opcion == '5':
+            imprimir(personas, 'Personas')
+            imprimir(estudiantes, 'Estudiantes')
+            imprimir(clientes, 'Clientes')
+            imprimir(empleados, 'Empleados')
+
+        elif opcion == '6':
+            crear_cvs(personas, estudiantes, clientes, empleados)
+
+        elif opcion == '7':
+
+            imprimir_csv()
+
+        elif opcion == '8':
+            print('Gracias por usar el programa')
+            break
+        else:
+            print('Por favor ingrese una opcion valida')
+
+
+if __name__ == '__main__':
+    main()

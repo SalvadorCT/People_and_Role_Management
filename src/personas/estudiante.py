@@ -12,7 +12,7 @@ class Estudiante(Persona):  # subclase
 
     @semestre_matricula.setter
     def semestre_matricula(self, semestre_matricula):
-        if semestre_matricula.isdigit() and 0 < semestre_matricula < 11:
+        if 0 < semestre_matricula < 10:
             self._semestre_matricula = semestre_matricula
         else:
             print('Por favor ingrese un numero valido')
