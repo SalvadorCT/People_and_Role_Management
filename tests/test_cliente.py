@@ -1,6 +1,7 @@
 import pytest
 from src.personas.cliente import Cliente
 
+
 # Define la función de prueba parametrizada y los casos de prueba
 @pytest.mark.parametrize(
     "identificacion, nombre, apellido, direccionfiscal, codepostal, estado",
@@ -14,7 +15,7 @@ from src.personas.cliente import Cliente
     ]
 )
 def test_creacion_estudiante(
-    identificacion, nombre, apellido, direccionfiscal, codepostal, estado
+        identificacion, nombre, apellido, direccionfiscal, codepostal, estado
 ):
     # Prueba de creación de un estudiante
     estudiante = Cliente(

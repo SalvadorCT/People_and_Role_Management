@@ -3,6 +3,7 @@ from personas.cliente import Cliente
 from personas.estudiante import Estudiante
 from personas.empleado import Empleado
 from src.assets.generar_cvs import *
+from src.validaciones.validacionDatos import *
 
 
 def menu_pricinpal():
@@ -60,40 +61,40 @@ def menu_pricinpal():
 
 
 def crear_persona():
-    id = input('Ingrese el ID: ')
-    nombre = input('Ingrese el Nombre: ')
-    apellido = input('Ingrese el Apellido: ')
+    id = validar_numero_largo("Ingrese la Identificacion: ", 6)
+    nombre = validar_texto('Ingrese el Nombre: ')
+    apellido = validar_texto('Ingrese el Apellido: ')
     persona = Persona(id, nombre, apellido)
     return persona
 
 
 def crear_estudiante():
-    id = input('Ingrese el ID: ')
-    nombre = input('Ingrese el Nombre: ')
-    apellido = input('Ingrese el Apellido: ')
-    semestre = int(input('Ingrese el Semestre de Matricula: '))
+    id = validar_numero_largo("Ingrese la Identificacion: ", 6)
+    nombre = validar_texto('Ingrese el Nombre: ')
+    apellido = validar_texto('Ingrese el Apellido: ')
+    semestre = verificar_numero_rango('Ingrese el Semestre de Matricula: ', 1, 10)
     estudiante = Estudiante(id, nombre, apellido, semestre)
     return estudiante
 
 
 def crear_cliente():
-    id = input('Ingrese el ID: ')
-    nombre = input('Ingrese el Nombre: ')
-    apellido = input('Ingrese el Apellido: ')
-    direccion = input('Ingrese la Direccion Fiscal: ')
-    codigo = input('Ingrese el Codigo Postal: ')
-    estado = input('Ingrese el Estado: ')
+    id = validar_numero_largo("Ingrese la Identificacion: ", 6)
+    nombre = validar_texto('Ingrese el Nombre: ')
+    apellido = validar_texto('Ingrese el Apellido: ')
+    direccion = validar_texto('Ingrese la Direccion Fiscal: ')
+    codigo = validar_numero_largo('Ingrese el Codigo Postal: ', 10)
+    estado = validar_texto('Ingrese el Estado: ')
     cliente = Cliente(id, nombre, apellido, direccion, codigo, estado)
     return cliente
 
 
 def crear_empleado():
-    id = input('Ingrese el ID: ')
-    nombre = input('Ingrese el Nombre: ')
-    apellido = input('Ingrese el Apellido: ')
+    id = validar_numero_largo("Ingrese la Identificacion: ", 6)
+    nombre = validar_texto('Ingrese el Nombre: ')
+    apellido = validar_texto('Ingrese el Apellido: ')
     fecha = input('Ingrese la Fecha de Ingreso: ')
-    cargo = input('Ingrese el Cargo: ')
-    sueldo = int(input('Ingrese el Sueldo: '))
+    cargo = validar_texto('Ingrese el Cargo: ')
+    sueldo = verificar_numero_rango('Ingrese el Sueldo: ', 1, 100000)
     empleado = Empleado(id, nombre, apellido, fecha, cargo, sueldo)
     return empleado
 

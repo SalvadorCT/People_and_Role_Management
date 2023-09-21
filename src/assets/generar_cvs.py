@@ -5,6 +5,8 @@ import os
 """
 Los archivos csv se crearan en la carpeta assets/datos cuando termine de ejecutar el programa
 """
+
+
 # El os.getcwd() es para obtener la ruta absoluta de la carpeta donde se esta ejecutando el programa
 
 # Convertir a csv

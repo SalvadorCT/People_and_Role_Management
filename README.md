@@ -24,22 +24,18 @@ People_and_Role_Management
 │   
 ├── src/
 |   ├── assets/
-│   |   ├── __init__.py
 │   │   └── generar_cvs.py
 |   |
 │   ├── personas/
-│   │   ├── __init__.py
 │   │   ├── cliente.py
 │   │   ├── empleado.py
 │   │   ├── estudiante.py
 │   │   └── persona.py
 |   |
-│   ├── __init__.py
 │   ├── main.py
 │   └── menu.py
 |
 ├── test/
-|   ├── __init__.py
 |   ├── test_cliente.py
 │   ├── test_empleado.py
 │   ├── test_estudiante.py
@@ -61,7 +57,7 @@ People_and_Role_Management
 
 - Clone the repository
 ```
-git clone  <git lab template url> <project_name>
+git clone https://github.com/SalvadorCT/People_and_Role_Management.git
 ```
 - Ingresar a la Carpeta o  Ruta donde se encuentra
 ```
@@ -70,7 +66,7 @@ cd ../path/to/the/file
 
 ## Dependencias
 
-Este proyecto utiliza Python 3 y no requiere la instalación de bibliotecas adicionales.
+Este proyecto utiliza Python 3.x y no requiere la instalación de bibliotecas adicionales(para utilizar los test se necesita el paquete de pytest).
 
 ## Licencia
 

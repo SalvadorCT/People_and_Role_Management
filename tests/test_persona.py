@@ -1,6 +1,7 @@
 import pytest
 from src.personas.persona import Persona
 
+
 @pytest.mark.parametrize(
     "identificacion, nombre, apellido",
     [
@@ -11,15 +12,14 @@ from src.personas.persona import Persona
         ('111111', 'Sara', 'Fernandez'),
     ]
 )
-
 def test_persona(identificacion, nombre, apellido):
     # Prueba de creación de la clase Persona
     persona = Persona(
-        id=identificacion, 
-        nombre=nombre, 
+        id=identificacion,
+        nombre=nombre,
         apellido=apellido,
-        )
-    
+    )
+
     # Obtener la representación de cadena del objeto
     cadena_persona = str(persona)
 
@@ -29,10 +29,8 @@ def test_persona(identificacion, nombre, apellido):
     assert print(persona) is None
     assert persona.adicional_info() is None
     assert cadena_persona == (f'\nHola! soy una Persona...'
-                                 f'\n🆔 Identificacion: {persona.id}'
-                                 f'\n👤 Nombre: {persona.nombre} {persona.apellido}')
-    
-
+                              f'\n🆔 Identificacion: {persona.id}'
+                              f'\n👤 Nombre: {persona.nombre} {persona.apellido}')
 
 # class MyTestCase(unittest.TestCase):  # Funciona como un contenedor de pruebas a futuro
 #     pass

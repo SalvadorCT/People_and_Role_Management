@@ -1,6 +1,7 @@
 import pytest
 from src.personas.estudiante import Estudiante
 
+
 # Define la función de prueba parametrizada y los casos de prueba
 @pytest.mark.parametrize(
     "identificacion, nombre, apellido, semestre",
@@ -15,12 +16,12 @@ from src.personas.estudiante import Estudiante
 )
 def test_creacion_estudiante(identificacion, nombre, apellido, semestre):
     estudiante = Estudiante(
-        id=identificacion, 
-        nombre=nombre, 
-        apellido=apellido, 
+        id=identificacion,
+        nombre=nombre,
+        apellido=apellido,
         semestre_matricula=semestre
-        )
-    
+    )
+
     # Obtener la representación de cadena del objeto
     cadena_estudiante = str(estudiante)
 
@@ -32,6 +33,6 @@ def test_creacion_estudiante(identificacion, nombre, apellido, semestre):
     assert print(estudiante) is None
     assert estudiante.adicional_info() is None
     assert cadena_estudiante == (f'\nHola! soy un Estudiante...'
-                f'\n🆔 Identificacion: {estudiante.id}'
-                f'\n👤 Nombre: {estudiante.nombre} {estudiante.apellido}'
-                f'\n📚 Semestre de Matricula: {estudiante.semestre_matricula}')
+                                 f'\n🆔 Identificacion: {estudiante.id}'
+                                 f'\n👤 Nombre: {estudiante.nombre} {estudiante.apellido}'
+                                 f'\n📚 Semestre de Matricula: {estudiante.semestre_matricula}')
