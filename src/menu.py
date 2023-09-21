@@ -2,8 +2,8 @@ from personas.persona import Persona
 from personas.cliente import Cliente
 from personas.estudiante import Estudiante
 from personas.empleado import Empleado
-from src.assets.generar_cvs import *
-from src.validaciones.validacionDatos import *
+from assets.generar_cvs import *
+from validaciones.validacionDatos import *
 
 
 def menu_pricinpal():
