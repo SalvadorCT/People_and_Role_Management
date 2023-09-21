@@ -2,12 +2,9 @@
 import csv
 import os
 
-"""
-Los archivos csv se crearan en la carpeta assets/datos cuando termine de ejecutar el programa
-"""
+# obtener la ruta del directorio actual
+ruta_actual = os.path.dirname(os.path.abspath(__file__))
 
-
-# El os.getcwd() es para obtener la ruta absoluta de la carpeta donde se esta ejecutando el programa
 
 # Convertir a csv
 def persona_a_csv(lista):
@@ -16,19 +13,19 @@ def persona_a_csv(lista):
         return 0
 
     # Abre el archivo en modo escritura
-    with open(f'{os.getcwd()}\\assets\\datos\\personas.csv', 'w', newline='') as file:
+    with open(f'{ruta_actual}\\datos\\personas.csv', 'w', newline='') as file:
         writer = csv.writer(file, delimiter=';')
         writer.writerow(['ID', 'Nombre', 'Apellido'])
         for persona in lista:
             writer.writerow([persona.id, persona.nombre, persona.apellido])
-        file.flush()
+        file.close()
 
 
 def cliente_a_csv(lista):
     if len(lista) == 0:
         print('No hay clientes registradas')
         return 0
-    with open(f'{os.getcwd()}\\assets\\datos\\clientes.csv', 'w', newline='') as file:
+    with open(f'{ruta_actual}\\datos\\clientes.csv', 'w', newline='') as file:
         writer = csv.writer(file, delimiter=';')
         writer.writerow(['ID', 'Nombre', 'Apellido', 'Direccion Fiscal', 'Codigo Postal', 'Estado'])
         for cliente in lista:
@@ -45,7 +42,7 @@ def empleado_a_csv(lista):
     if len(lista) == 0:
         print('No hay empleados registradas')
         return 0
-    with open(f'{os.getcwd()}\\assets\\datos\\empleados.csv', 'w', newline='') as file:
+    with open(f'{ruta_actual}\\datos\\empleados.csv', 'w', newline='') as file:
         writer = csv.writer(file, delimiter=';')
         writer.writerow(['ID', 'Nombre', 'Apellido', 'Fecha Ingreso', 'Cargo', 'Sueldo'])
         for empleado in lista:
@@ -62,7 +59,7 @@ def estudiante_a_csv(lista):
     if len(lista) == 0:
         print('No hay estudiantes registrados')
         return 0
-    with open(f'{os.getcwd()}\\assets\\datos\\estudiantes.csv', 'w', newline='') as file:
+    with open(f'{ruta_actual}\\datos\\estudiantes.csv', 'w', newline='') as file:
         writer = csv.writer(file, delimiter=';')
         writer.writerow(['ID', 'Nombre', 'Apellido', 'Semestre Matricula'])
         for estudiante in lista:
@@ -76,7 +73,7 @@ def estudiante_a_csv(lista):
 # Leer csv
 def leer_csv(archivo):
     try:
-        with open(f'{os.getcwd()}\\assets\\datos\\{archivo}.csv', newline='') as File:
+        with open(f'{ruta_actual}\\datos\\{archivo}.csv', newline='') as File:
             reader = csv.reader(File, delimiter=';')
             print(f'Datos del archivo {archivo}.csv')
             for row in reader:
