@@ -1,0 +1,6 @@
+Un archivo CSV (del inglés “Comma Separated Values”, que significa valores separados por comas) es un tipo de documento en formato de 
+texto plano que utiliza un diseño específico para organizar tablas de datos. Cada línea del archivo representa un registro, y cada 
+columna representa un campo.
+  
+Los archivos CSV son útiles para manejar una gran cantidad de datos en formato de tabla sin sobrecargar los recursos computacionales. 
+Son fáciles de generar y leer, y ocupan poco espacio de almacenamiento.
