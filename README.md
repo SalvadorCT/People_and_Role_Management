@@ -19,11 +19,15 @@
 ## Estructura del programa
 ```
 People_and_Role_Management
+|
 ├── docs/
 │   └── user_guide.md
 │   
 ├── src/
 |   ├── assets/
+│   │   ├── datos/
+|   |   |   └── Explicacion cvs.txt
+|   |   |
 │   │   └── generar_cvs.py
 |   |
 │   ├── personas/
